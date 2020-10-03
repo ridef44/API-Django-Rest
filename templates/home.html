@@ -1,0 +1,51 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+  <head>
+    {% block extrastatic %} {% endblock %}
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/3.4.1/cosmo/bootstrap.min.css"
+    />
+
+    <title>{%block title%} DOCUMENT {%endblock%}</title>
+  </head>
+
+
+
+
+  <body>
+    <form>
+      <div class="container">
+    <h2>Ingreso </h2>
+
+    <p>Administracion APIView.</p>
+
+    <a class="btn btn-default" href="{% url 'api:persona_list'%}">Clientes</a>
+    <a class="btn btn-default" href="{% url 'producto:api_producto'%}">Productos</a>
+    <a class="btn btn-default" href="{% url 'venta:api_solicitud'%}">Ventas</a>
+    <a class="btn btn-default" href="{% url 'producto:api_pago'%}">Tipos de Pago</a>
+
+        <p></p>
+        <h1></h1>
+
+      <p>Ingreso a Menu.</p>
+      <a class="btn btn-primary" href="{% url 'venta:solicitud_crear'%}">Registrar Ventas</a>
+
+        </div>
+
+
+
+</form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    {%block extrajs%} {%endblock%}
+  </body>
+</html>

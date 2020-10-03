@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/3.4.1/cosmo/bootstrap.min.css"
+    />
+
+    <title> DOCUMENT </title>
+  </head>
+
+<form  method="post">
+  <div class="imgcontainer">
+    
+  </div>
+
+<form method="post">
+	{% csrf_token %}
+
+    <div class="container">
+        <p></p>
+
+	  <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="form-group">
+            <label for="username">Nombre de usuario:</label>
+            <div></div>
+        		<input class="form-control" type="text" name="username">
+    	   </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="form-group">
+            <label for="username">Contraseña:</label>
+            <div></div>
+        		<input class="form-control" type="password" name="password">
+         </div>
+         <div></div>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="form-group">
+          <p></p>
+
+        		<input class="btn btn-primary" type="submit" value="Ingresar">
+                <p></p>
+                            <span class="psw"> <a href="{% url 'api:registrar'%}">Registro</a></span>
+                <h1></h1>
+
+                <div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Info!</strong> La contraseña debe llevar:
+                  <li> Al menos 8 Caracteres. </li>
+                   <li> Letras y Numeros. </li>
+
+                  <li>Un Simbolo { *  ,    /    ,   +  ,  -  ,   . }</li>
+
+                   <a href="#" class="alert-link"></a>
+		</div>
+
+
+
+
+
+    </div>
+
+    
+  
+    </div>
+
+
+
+
+
+    </form>
+
+</form>
+
+</html>
+
+

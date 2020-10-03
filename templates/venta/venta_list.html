@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %} {% block content %}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Cliente</td>
+      <td>No. Compras</td>
+      <td>Detalle de Venta</td>
+      <td>Acciones</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% if object_list %} {% for solicitud in object_list %}
+    <tr>
+      <td>{{ solicitud.id }}</td>
+      <td>{{ solicitud.persona.nombre }} {{solicitud.persona.apellido}}</td>
+      <td>{{ solicitud.numero_productos }}</td>
+      <td>{{ solicitud.detalle }}</td>
+
+      <td>
+        <a
+          class="btn btn-primary"
+          href="{% url 'venta:solicitud_editar' solicitud.id%}"
+          >Editar</a
+        >
+        <a
+          class="btn btn-danger"
+          href="{% url 'venta:solicitud_eliminar' solicitud.id%}"
+          >Eliminar</a
+        >
+      </td>
+    </tr>
+    {% endfor %} {% else %}
+    <h1>No hay registros de Venta</h1>
+    {% endif %}
+  </tbody>
+</table>
+
+{%endblock%}

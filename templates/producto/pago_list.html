@@ -1,0 +1,39 @@
+{% extends 'base/base.html'%} {% block content %}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Nombre</td>
+      <td>Opciones</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% if object_list %} {% for pago in object_list %}
+
+    <tr>
+      <td>{{pago.id}}</td>
+      <td>{{pago.nombre}}</td>
+
+      <td>
+        <a
+          class="btn btn-primary"
+          href="{% url 'producto:pago_editar' pago.id%}"
+          >Editar</a
+        >
+        <a
+          class="btn btn-danger"
+          href="{% url 'producto:pago_eliminar' pago.id%}"
+          >Eliminar</a
+        >
+      </td>
+    </tr>
+    {% endfor %} {% else %}
+    <h2>NO Existen Tipós de Pagos Ingrese uno Nuevo</h2>
+
+    {% endif %}
+  </tbody>
+</table>
+
+{%endblock%}
